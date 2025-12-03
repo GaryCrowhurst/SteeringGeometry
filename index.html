@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steering Geometry Guide - Level 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .intro {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .intro h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .term-section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .term-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .term-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .term-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: 20px;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.4);
+        }
+        
+        .term-header h3 {
+            color: #2c3e50;
+            font-size: 1.8em;
+        }
+        
+        .term-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+        
+        .term-text {
+            padding-right: 20px;
+        }
+        
+        .term-text p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+        
+        .term-text .key-point {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .term-text .key-point strong {
+            color: #1976d2;
+        }
+        
+        .term-image {
+            text-align: center;
+        }
+        
+        .term-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            background: #f5f5f5;
+            padding: 10px;
+        }
+        
+        .term-image p {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        .tip-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+        
+        .tip-box h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .term-content {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .term-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 Steering Geometry Guide</h1>
+            <p>Level 1 Motor Vehicle Maintenance</p>
+        </header>
+        
+        <div class="content">
+            <div class="intro">
+                <h2>Understanding Steering Geometry</h2>
+                <p>Steering geometry refers to the angles and measurements that control how a vehicle's wheels interact with the road and respond to steering inputs. These settings are crucial for vehicle safety, handling, tyre wear, and driver comfort. This guide covers the essential steering geometry terms you need to know.</p>
+            </div>
+            
+            <!-- Camber -->
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">1</div>
+                    <h3>Camber</h3>
+                </div>
+                <div class="term-content">
+                    <div class="term-text">
+                        <p><strong>Camber</strong> is the angle of the wheel when viewed from the front of the vehicle, measured in degrees from vertical.</p>
+                        <p>If the top of the wheel leans outward (away from the vehicle), this is <strong>positive camber</strong>. If it leans inward (toward the vehicle), this is <strong>negative camber</strong>.</p>
+                        <div class="key-point">
+                            <strong>Why it matters:</strong> Positive camber reduces steering effort and is used on heavy vehicles. Negative camber improves cornering grip on performance vehicles. Incorrect camber causes uneven tyre wear - outer edge wear with positive, inner edge wear with negative.
+                        </div>
+                    </div>
+                    <div class="term-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Camber_angle.svg/400px-Camber_angle.svg.png" alt="Camber angle diagram showing positive and negative camber">
+                        <p>Camber angle - front view of wheel alignment</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Caster -->
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">2</div>
+                    <h3>Caster</h3>
+                </div>
+                <div class="term-content">
+                    <div class="term-text">
+                        <p><strong>Caster</strong> is the angle of the steering pivot when viewed from the side of the vehicle.</p>
+                        <p>If the top of the steering axis tilts toward the rear of the vehicle, this is <strong>positive caster</strong>. Most modern vehicles use positive caster between 2-8 degrees.</p>
+                        <div class="key-point">
+                            <strong>Why it matters:</strong> Positive caster provides directional stability and helps the steering wheel return to centre after cornering (self-centering). Too much caster makes steering heavy, while too little causes the vehicle to wander and feel unstable.
+                        </div>
+                    </div>
+                    <div class="term-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Caster_angle.svg/400px-Caster_angle.svg.png" alt="Caster angle diagram showing steering axis inclination">
+                        <p>Caster angle - side view showing steering axis tilt</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Toe In -->
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">3</div>
+                    <h3>Toe In</h3>
+                </div>
+                <div class="term-content">
+                    <div class="term-text">
+                        <p><strong>Toe in</strong> means the front of the wheels point slightly inward toward each other when viewed from above.</p>
+                        <p>The measurement is the difference between the distance at the front of the wheels compared to the rear - typically measured in millimetres or degrees.</p>
+                        <div class="key-point">
+                            <strong>Why it matters:</strong> Toe in improves straight-line stability, especially on rear-wheel drive vehicles. It compensates for the natural tendency of wheels to spread apart under power. However, too much toe in causes tyre scrubbing and increases wear on the outer edges.
+                        </div>
+                    </div>
+                    <div class="term-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Toein.svg/500px-Toein.svg.png" alt="Toe in diagram showing wheels pointing inward">
+                        <p>Toe in - top view showing wheels angled inward</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Toe Out -->
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">4</div>
+                    <h3>Toe Out</h3>
+                </div>
+                <div class="term-content">
+                    <div class="term-text">
+                        <p><strong>Toe out</strong> means the front of the wheels point slightly outward away from each other when viewed from above.</p>
+                        <p>This is the opposite of toe in - the distance at the front of the wheels is greater than at the rear.</p>
+                        <div class="key-point">
+                            <strong>Why it matters:</strong> Toe out improves initial turn-in response and steering feel. It's sometimes used on front-wheel drive vehicles to compensate for the natural toe-in effect under acceleration. Excessive toe out causes instability at speed and rapid tyre wear on the inner edges.
+                        </div>
+                    </div>
+                    <div class="term-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Toeout.svg/500px-Toeout.svg.png" alt="Toe out diagram showing wheels pointing outward">
+                        <p>Toe out - top view showing wheels angled outward</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- KPI -->
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">5</div>
+                    <h3>KPI (King Pin Inclination)</h3>
+                </div>
+                <div class="term-content">
+                    <div class="term-text">
+                        <p><strong>King Pin Inclination (KPI)</strong> is the angle between the steering pivot axis and a vertical line when viewed from the front of the vehicle.</p>
+                        <p>The term comes from older vehicles that used a king pin, but the principle applies to modern ball joint and strut systems.</p>
+                        <div class="key-point">
+                            <strong>Why it matters:</strong> KPI reduces steering effort by reducing the scrub radius. It helps the steering return to centre after cornering and causes the vehicle to lift slightly during turns, which creates a natural self-centering force through the vehicle's weight.
+                        </div>
+                    </div>
+                    <div class="term-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Kingpin_inclination.svg/400px-Kingpin_inclination.svg.png" alt="King pin inclination diagram">
+                        <p>KPI - steering axis angle from vertical</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SAI -->
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">6</div>
+                    <h3>SAI (Steering Axis Inclination)</h3>
+                </div>
+                <div class="term-content">
+                    <div class="term-text">
+                        <p><strong>Steering Axis Inclination (SAI)</strong> is the modern term for KPI, used on vehicles with MacPherson strut suspension.</p>
+                        <p>It measures the same angle but refers to the strut axis rather than a king pin. SAI combined with camber gives the "included angle".</p>
+                        <div class="key-point">
+                            <strong>Why it matters:</strong> SAI is crucial for proper wheel alignment and cannot be adjusted - it's built into the suspension design. Checking SAI and included angle helps diagnose bent suspension components after impacts or collisions. Incorrect SAI indicates structural damage.
+                        </div>
+                    </div>
+                    <div class="term-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Macpherson_strut.svg/300px-Macpherson_strut.svg.png" alt="MacPherson strut showing SAI">
+                        <p>SAI on MacPherson strut suspension</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scrub Radius -->
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">7</div>
+                    <h3>Scrub Radius</h3>
+                </div>
+                <div class="term-content">
+                    <div class="term-text">
+                        <p><strong>Scrub radius</strong> is the distance at ground level between where the steering axis meets the road and the centre of the tyre contact patch, when viewed from the front.</p>
+                        <p>It can be positive (outside contact patch), zero, or negative (inside contact patch).</p>
+                        <div class="key-point">
+                            <strong>Why it matters:</strong> A smaller scrub radius reduces steering effort and improves stability, especially during braking. Zero or negative scrub radius helps vehicles track straight if one brake fails or there's unequal braking force. It's a key safety feature on modern vehicles.
+                        </div>
+                    </div>
+                    <div class="term-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Scrub_radius_positive.svg/400px-Scrub_radius_positive.svg.png" alt="Scrub radius diagram">
+                        <p>Scrub radius - distance between steering axis and contact patch</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ackermann Angle -->
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">8</div>
+                    <h3>Ackermann Angle</h3>
+                </div>
+                <div class="term-content">
+                    <div class="term-text">
+                        <p><strong>Ackermann angle</strong> refers to the geometry that makes the inner wheel turn at a sharper angle than the outer wheel during cornering.</p>
+                        <p>This is achieved through the design of the steering linkage, where the steering arms angle toward the centre of the rear axle.</p>
+                        <div class="key-point">
+                            <strong>Why it matters:</strong> Ackermann geometry is essential because the inner wheel travels a smaller radius than the outer wheel when cornering. Without it, the tyres would scrub sideways, causing excessive wear, poor handling, and increased fuel consumption.
+                        </div>
+                    </div>
+                    <div class="term-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Ackermann_turning.svg/500px-Ackermann_turning.svg.png" alt="Ackermann steering geometry diagram">
+                        <p>Ackermann geometry - different wheel angles during turns</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Turning Radius -->
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">9</div>
+                    <h3>Turning Radius (Turning Circle)</h3>
+                </div>
+                <div class="term-content">
+                    <div class="term-text">
+                        <p><strong>Turning radius</strong> (or turning circle) is the smallest circular turn a vehicle can make, measured from the centre of the circle to the outermost part of the vehicle.</p>
+                        <p>It's usually specified as "kerb to kerb" (tyre outer edge) or "wall to wall" (vehicle outer edge including mirrors).</p>
+                        <div class="key-point">
+                            <strong>Why it matters:</strong> A smaller turning radius improves manoeuvrability in tight spaces, makes parking easier, and is essential for urban driving. It depends on wheelbase length, maximum steering angle, and Ackermann geometry. Long wheelbase vehicles have larger turning circles.
+                        </div>
+                    </div>
+                    <div class="term-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Turning_circle.svg/500px-Turning_circle.svg.png" alt="Turning radius diagram">
+                        <p>Turning radius - minimum circular turn path</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Castor Trail -->
+            <div class="term-section">
+                <div class="term-header">
+                    <div class="term-number">10</div>
+                    <h3>Castor Trail</h3>
+                </div>
+                <div class="term-content">
+                    <div class="term-text">
+                        <p><strong>Castor trail</strong> is the horizontal distance between where the steering axis meets the ground and the centre of the tyre contact patch, measured along the ground surface.</p>
+                        <p>It's created by positive caster and is similar to how a shopping trolley wheel trails behind its pivot point.</p>
+                        <div class="key-point">
+                            <strong>Why it matters:</strong> Greater castor trail provides more self-centering force and directional stability. The wheel naturally wants to align itself behind the steering axis. This improves straight-line stability and helps the steering return to centre without driver input. Too much trail makes steering heavy at low speeds.
+                        </div>
+                    </div>
+                    <div class="term-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Caster_trail.svg/400px-Caster_trail.svg.png" alt="Castor trail diagram">
+                        <p>Castor trail - distance creating self-centering effect</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <h3>💡 Remember</h3>
+                <p><strong>Adjustable vs Non-Adjustable:</strong> On most vehicles, camber, caster, and toe are adjustable during wheel alignment. KPI/SAI and scrub radius are built into the suspension design and cannot be adjusted - they can only be checked to diagnose suspension damage.</p>
+                <p><strong>Always Check Specifications:</strong> Every vehicle has different manufacturer specifications for steering geometry. Always consult the appropriate service manual or alignment data for the specific vehicle you're working on.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p><strong>Steering Geometry Guide</strong></p>
+            <p>Level 1 Motor Vehicle Maintenance | Educational Resource</p>
+            <p>Images courtesy of Wikimedia Commons</p>
+        </footer>
+    </div>
+</body>
+</html>
