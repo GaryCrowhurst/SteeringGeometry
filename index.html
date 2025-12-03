@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +34,7 @@
             color: white;
             padding: 40px 20px;
             text-align: center;
+            position: relative;
         }
         
         header h1 {
@@ -44,6 +46,24 @@
         header p {
             font-size: 1.2em;
             opacity: 0.9;
+        }
+        
+        .qr-code {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            background: white;
+            padding: 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            display: block;
         }
         
         .content {
@@ -145,6 +165,21 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             background: #f5f5f5;
             padding: 10px;
+            min-height: 250px;
+            object-fit: contain;
+        }
+        
+        .term-image .placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            color: #666;
+            border: 2px dashed #999;
         }
         
         .term-image p {
@@ -194,12 +229,22 @@
             .term-section {
                 padding: 20px;
             }
+            
+            .qr-code {
+                width: 80px;
+                height: 80px;
+                top: 10px;
+                right: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
+            <div class="qr-code">
+                <img src="steeringqr.png" alt="QR Code - Steering Geometry Guide">
+            </div>
             <h1>🚗 Steering Geometry Guide</h1>
             <p>Level 1 Motor Vehicle Maintenance</p>
         </header>
@@ -225,7 +270,8 @@
                         </div>
                     </div>
                     <div class="term-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Camber_angle.svg/400px-Camber_angle.svg.png" alt="Camber angle diagram showing positive and negative camber">
+                        <img src="images/camber_angle.png" alt="Camber angle diagram showing positive and negative camber" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder" style="display:none;">📐 Camber Diagram<br>Draw your own</div>
                         <p>Camber angle - front view of wheel alignment</p>
                     </div>
                 </div>
@@ -246,7 +292,8 @@
                         </div>
                     </div>
                     <div class="term-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Caster_angle.svg/400px-Caster_angle.svg.png" alt="Caster angle diagram showing steering axis inclination">
+                        <img src="images/caster_angle.png" alt="Caster angle diagram showing steering axis inclination" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder" style="display:none;">📐 Caster Diagram<br></div>
                         <p>Caster angle - side view showing steering axis tilt</p>
                     </div>
                 </div>
@@ -267,7 +314,8 @@
                         </div>
                     </div>
                     <div class="term-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Toein.svg/500px-Toein.svg.png" alt="Toe in diagram showing wheels pointing inward">
+                        <img src="images/toe_in.png" alt="Toe in diagram showing wheels pointing inward" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder" style="display:none;">📐 Toe In Diagram<br></div>
                         <p>Toe in - top view showing wheels angled inward</p>
                     </div>
                 </div>
@@ -288,7 +336,8 @@
                         </div>
                     </div>
                     <div class="term-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Toeout.svg/500px-Toeout.svg.png" alt="Toe out diagram showing wheels pointing outward">
+                        <img src="images/toe_out.png" alt="Toe out diagram showing wheels pointing outward" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder" style="display:none;">📐 Toe Out Diagram<br></div>
                         <p>Toe out - top view showing wheels angled outward</p>
                     </div>
                 </div>
@@ -309,7 +358,8 @@
                         </div>
                     </div>
                     <div class="term-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Kingpin_inclination.svg/400px-Kingpin_inclination.svg.png" alt="King pin inclination diagram">
+                        <img src="images/kpi_kingpin.png" alt="King pin inclination diagram" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder" style="display:none;">📐 KPI Diagram<br></div>
                         <p>KPI - steering axis angle from vertical</p>
                     </div>
                 </div>
@@ -330,7 +380,8 @@
                         </div>
                     </div>
                     <div class="term-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Macpherson_strut.svg/300px-Macpherson_strut.svg.png" alt="MacPherson strut showing SAI">
+                        <img src="images/sai_strut.png" alt="MacPherson strut showing SAI" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder" style="display:none;">📐 SAI Diagram<br></div>
                         <p>SAI on MacPherson strut suspension</p>
                     </div>
                 </div>
@@ -351,7 +402,8 @@
                         </div>
                     </div>
                     <div class="term-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Scrub_radius_positive.svg/400px-Scrub_radius_positive.svg.png" alt="Scrub radius diagram">
+                        <img src="images/scrub_radius.png" alt="Scrub radius diagram" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder" style="display:none;">📐 Scrub Radius Diagram<br></div>
                         <p>Scrub radius - distance between steering axis and contact patch</p>
                     </div>
                 </div>
@@ -372,7 +424,8 @@
                         </div>
                     </div>
                     <div class="term-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Ackermann_turning.svg/500px-Ackermann_turning.svg.png" alt="Ackermann steering geometry diagram">
+                        <img src="images/ackermann_steering.png" alt="Ackermann steering geometry diagram" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder" style="display:none;">📐 Ackermann Diagram<br></div>
                         <p>Ackermann geometry - different wheel angles during turns</p>
                     </div>
                 </div>
@@ -393,7 +446,8 @@
                         </div>
                     </div>
                     <div class="term-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Turning_circle.svg/500px-Turning_circle.svg.png" alt="Turning radius diagram">
+                        <img src="images/turning_circle.png" alt="Turning radius diagram" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder" style="display:none;">📐 Turning Circle Diagram<br></div>
                         <p>Turning radius - minimum circular turn path</p>
                     </div>
                 </div>
@@ -414,7 +468,8 @@
                         </div>
                     </div>
                     <div class="term-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Caster_trail.svg/400px-Caster_trail.svg.png" alt="Castor trail diagram">
+                        <img src="images/caster_trail.png" alt="Castor trail diagram" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder" style="display:none;">📐 Castor Trail Diagram<br></div>
                         <p>Castor trail - distance creating self-centering effect</p>
                     </div>
                 </div>
@@ -430,7 +485,7 @@
         <footer>
             <p><strong>Steering Geometry Guide</strong></p>
             <p>Level 1 Motor Vehicle Maintenance | Educational Resource</p>
-            <p>Images courtesy of Wikimedia Commons</p>
+            <p>Add your own images to the 'images' folder</p>
         </footer>
     </div>
 </body>
